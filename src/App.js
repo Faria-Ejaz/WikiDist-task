@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import HomePage from "./pages/HomePage";
+import DocumentPage from "./pages/DocumentPage";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  withRouter,
+} from "react-router-dom";
+import RevisionPage from "./pages/RevisionPage";
+// Context
+import DocumentContextProvider from "./context/DocumentContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DocumentContextProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={withRouter(HomePage)} />
+          <Route
+            exact
+            path="/page/:document"
+            component={withRouter(DocumentPage)}
+          />
+          <Route
+            path="/page/:document/:revisions"
+            component={withRouter(RevisionPage)}
+          />
+        </Switch>
+      </Router>
+    </DocumentContextProvider>
   );
 }
 
