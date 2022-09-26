@@ -1,3 +1,29 @@
+![enter image description here](https://assets.website-files.com/6165cc08812f5858748c118c/61efe2515fbc89e1fd313373_passfort-moodys-primarylogo.svg)
+
+# Wiki Coding Task
+
+A description of the wiki follows:
+
+ - A wiki is a collection of **documents**
+ - **Documents** are lumps of plain text. No graphics, attachments, or formatting Each **documents** is uniquely identified by a **title** that is a maximum of 50 characters in length. This title does not change for the life of a document
+ - A **documents** can have multiple **revisions**, as it is updated over time. We store all historical revisions of a document
+ -  We should be able to view the **documents** as it was at any point in time. I.e. we can use any timestamp to fetch a **revision** e.g. If we have a document at time 1pm and time 3pm, then sending a timestamp of 2pm should return the document as it was at time 1pm.
+ 
+# / server
+
+Following commands are for **macOS** users: 
+
+ 1. open WikiDist/server/run.sh file and add path to the directory `cd '[PATH TO DIRECTOTY]/WikiDist-task/server'`
+ 2. Open terminal and go to WikiDist-task/server directory and run `sh run.sh` command this will run the  following commands. 
+
+  ### /run.sh
+    virtualenv flask
+    cd flask
+    source bin/activate
+    pip3 install -U flask-cors
+    cd '[PATH TO DIRECTOTY]/WikiDist-task/server'
+    python3 wiki.py
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -13,6 +39,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+### `npm run cypress`
+
+This script will open cypress.io window and you can choose  your preferred browser 
+for E2E testing and start the cypress test but before that go to 
+`cypress/e2e/homePage.cy.js` and change the local host address Port
+`cy.visit('http://localhost:3002/')` in which the react app is running.
 
 ### `npm test`
 
@@ -68,3 +101,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# /server
+
+
